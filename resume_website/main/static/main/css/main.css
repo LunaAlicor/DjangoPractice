@@ -1,0 +1,83 @@
+
+body{
+     background: linear-gradient(to bottom, #2c2c2c 10%, black 99%);}
+
+aside{
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+.name-container {
+    margin-top: 60%;
+    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+aside img{
+    width: 70% ;
+    float: left;
+}
+
+aside .logo {
+    font-size: 240%;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+aside h3{
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+aside ul{
+    list-style: none
+}
+
+aside ul li{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 10%;
+    transition: transform .3s ease;
+    font-size: medium;
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: darkorange;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.features {
+    float: left;
+    color: white;
+    margin-top: 20px;
+    margin-left: 5%;
+    text-align: center;
+    width: 75%;
+}
+
+.features h1 {
+    font-size: 50px;
+}
+
+.features p{
+    max-width: 400px;
+    margin: 20px auto;
+}

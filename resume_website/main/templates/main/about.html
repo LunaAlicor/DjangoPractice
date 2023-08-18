@@ -1,0 +1,39 @@
+{% extends 'main/sample.html' %}
+{% load static%}
+
+{% block title%}About me{% endblock %}
+
+{% block content %}
+
+<div class="features">
+   <h1>Обо мне</h1>
+   <p>Привет! Меня зовут Владислав, мне 22 года, живу в городе Великий Новгород. В недалеком будущем вижу себя
+      web-Python-разработчиком. Опыт программирования - два года, учусь на 2 курсе информационных систем и технологий.
+      Ищу работу на полное время, готов к переезду (желательно, в Санкт-Питербург) и работе с классным коллективом
+      для повышения квалификации и покорения новых вершин!
+      <h2>Skills</h2>
+      <ul style="list-style: none;">
+         <li>Python и его библиотеки</li>
+         <li>C++(Вузовская программа)</li>
+         <li>Фреймворк Django</li>
+         <li>Система контроля версий GIT</li>
+         <li>MySQL, SQlite</li>
+      </ul>
+      <h2>Soft Skills</h2>
+      <ul style="list-style: none;">
+         <li>Русский язык - разговорный</li>
+         <li>Английский язык - B2</li>
+         <li>Умение гуглить решение проблемы :)</li>
+         <li>Коммуникабельность</li>
+      </ul>
+      <h3>Связь со мной</h3>
+      <ul style="list-style: none;">
+         <a href="https://github.com/LunaAlicor">https://github.com/LunaAlicor</a>
+         <li>@SPB_ScarLord - telegram</li>
+         <li>wow.bg3@mail.ru</li>
+      </ul>
+   </p>
+   <button class="btn" style="background-color: darkorange; color: white;" onclick="location.href='/projects';">Проекты</button>
+</div>
+
+{% endblock %}

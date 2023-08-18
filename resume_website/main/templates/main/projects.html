@@ -1,0 +1,31 @@
+{% extends 'main/sample.html' %}
+{% load static%}
+
+{% block title%}My projects{% endblock %}
+
+{% block content %}
+<div class="features">
+   <h1>Мои проекты</h1>
+
+   <p>
+   <h2>Боты</h2>
+      <a href="https://github.com/LunaAlicor/VKbot">GPT3VKbot</a>Это мой GPT-бот для социальной сети VK.
+   Для использования в одноименные файлы нужно указать свои токены, чтобы бот мог работать сразу с несколькими пользователями.
+   Я использовал многопоточность. Проект является законченным, задокументированным и готовым к использованию.
+   <h2>Решение задач</h2>
+      <a href="https://github.com/LunaAlicor/leetcode">Leetcode</a>,
+      <a href="https://github.com/LunaAlicor/Codewars">Codewars</a>в этих репозиториях
+   я выкладываю решения различных задач на языке python.
+   <h2>Совместные проекты</h2>
+      <a href="https://github.com/LunaAlicor/code_names_my_fork">Codenames</a>это наш с друзьями совместный проект,
+   в котором нами руководит опытный разработчик. Мне удалось закрыть пару задач, например, хеширование паролей в базе
+   данных, создание кнопок и логики к ним (выход, регистрация), а также создание логики и внешнего вида сайта (CSS).
+   Сайт представляет собой одноименную игру для нескольких людей. Проект дал мне возможность изучить работу с
+   незнакомыми технологиями, такими как Node.js и Typescript.
+   <h2>Django</h2>
+   <a href="https://github.com/LunaAlicor/DjangoPractice">Django</a>В этом репозитории я выкладываю практику по
+   фреймворку Django. Сейчас там немного, но это честная работа. В будущем планирую выкладывать туда больше проектов.
+   </p>
+   <button class="btn" style="background-color: darkorange; color: white;" onclick="location.href='/projects';">Поставить класс</button>
+</div>
+{% endblock %}

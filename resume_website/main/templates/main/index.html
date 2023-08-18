@@ -1,0 +1,21 @@
+{% extends 'main/sample.html' %}
+{% load static%}
+
+{% block title%}Resume{% endblock %}
+
+{% block content %}
+<div class="features">
+   <h1>Главная страница</h1>
+   <p>Сайт разработан в рамках практического занятия для закрепления базовых тем:
+      <ul style="list-style: none;">
+         <li>Создание django проекта</li>
+         <li>Создание django приложения</li>
+         <li>Работа с шаблонизатором jinja</li>
+         <li>Работа с HTML и CSS</li>
+         <li>Базовая верстка сайта</li>
+      </ul>
+   Надеюсь получилось неплохо, так же на сайте можно посмотреть:
+   </p>
+   <button class="btn" style="background-color: darkorange; color: white;" onclick="location.href='/about';">Обо мне</button>
+</div>
+{% endblock %}
