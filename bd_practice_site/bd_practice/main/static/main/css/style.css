@@ -8,6 +8,11 @@ body {
     padding-left: 10%;
 }
 
+.alert:hover{
+    transform: scale(1.02);
+    transition: all .6s ease;
+}
+
 .contentnews{
     padding-top: 10px;
     text-align: center;
@@ -22,6 +27,13 @@ body {
 
 .navbar-nav {
   margin-left: auto;
+  font-weight: bold;
+}
+
+.navbar-nav li:hover, a:hover{
+    color: #4d4d4d !important;
+    transform: scale(1.05);
+    transition: all .3s ease;
 }
 
 .nav-link {
@@ -32,4 +44,13 @@ body {
     color: white;
     border-color: white;
     background-color: #272727;
+}
+.btn.btn-outline-success.my-2.my-sm-0:hover {
+    transform: scale(1.05);
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    transition: all .3s ease;
 }
