@@ -1,0 +1,35 @@
+body {
+    background: #272727;
+    color: #fff;
+}
+
+.alert{
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+.contentnews{
+    padding-top: 10px;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.navbar {
+  height: 100px;
+  background-color: #E88914  !important;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.btn.btn-outline-success.my-2.my-sm-0 {
+    color: white;
+    border-color: white;
+    background-color: #272727;
+}

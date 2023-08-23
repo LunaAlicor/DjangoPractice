@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>news</title>
-</head>
-<body>
-news
+{% extends 'main/sample.html' %}
+{% load static%}
 
-</body>
-</html>
+{% block title%}Новости{% endblock %}
+
+
+{% block content %}
+    {% if news %}
+        {% for el in news %}
+            <div class='alert'>
+            <h3>{{ el.title}}</h3>
+            <p>{{el.anons}}</p>
+            <div>
+                <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='/news';">Перейти к новости</button>
+            </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Новостей пока нет:(</p>
+    {% endif %}
+{% endblock %}
