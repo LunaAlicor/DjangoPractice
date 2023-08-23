@@ -11,7 +11,7 @@
             <h3>{{ el.title}}</h3>
             <p>{{el.anons}}</p>
             <div>
-                <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='/news';">Перейти к новости</button>
+                <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='{% url 'news-detail' el.id %}';">Перейти к новости</button>
             </div>
             </div>
         {% endfor %}

@@ -8,6 +8,11 @@ body {
     padding-left: 10%;
 }
 
+.alert2{
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
 .alert:hover{
     transform: scale(1.02);
     transition: all .6s ease;
@@ -53,4 +58,8 @@ body {
 .btn:hover {
     transform: scale(1.05);
     transition: all .3s ease;
+}
+
+.btn{
+    font-weight: bold;
 }
