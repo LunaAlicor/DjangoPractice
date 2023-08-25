@@ -5,17 +5,28 @@
 
 
 {% block content %}
-    {% if news %}
-        {% for el in news %}
+    {% if page_obj %}
+        {% for el in page_obj %}
             <div class='alert'>
-            <h3>{{ el.title}}</h3>
-            <p>{{el.anons}}</p>
-            <div>
-                <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='{% url 'news-detail' el.id %}';">Перейти к новости</button>
-            </div>
+               <h3>{{ el.title}}</h3>
+               <p>{{el.anons}}</p>
+               <div>
+                  <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='{% url 'news-detail' el.id %}';">Перейти к новости</button>
+               </div>
             </div>
         {% endfor %}
-    {% else %}
-        <p>Новостей пока нет:(</p>
+        {% if page_obj.has_previous %}
+
+          <button class="btn mt-3" style="background-color: darkorange; color: white; padding-left: 20%;padding-right: 20%;padding-top: 2%;padding-bottom: 2%;" onclick="location.href='?page={{ page_obj.previous_page_number }}';">Предыдущая страница</button>
+
+        {% endif %}
+        {% if page_obj.has_next %}
+
+          <button class="btn mt-3" style="background-color: darkorange; color: white; padding-left: 20%;padding-right: 20%;padding-top: 2%;padding-bottom: 2%;" onclick="location.href='?page={{ page_obj.next_page_number }}';">Следующая страница</button>
+
+        {% endif %}
+        {% else %}
+            <p>Новостей пока нет:(</p>
     {% endif %}
+<br><br>
 {% endblock %}

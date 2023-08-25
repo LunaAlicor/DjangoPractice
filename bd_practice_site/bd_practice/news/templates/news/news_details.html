@@ -11,8 +11,10 @@
         <p>{{article.full_text}}</p>
         <p>{{article.date}}</p>
         <div class="text-center">
-            <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='/news';">Назад</button>
+            <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="history.go(-1);">Назад</button>
+            {% if article.id != 1 %}
+            <a href='/news/{{article.id|add:"-1"}}' class="btn mt-3" style="background-color: darkorange; color: white;">Следующая новость</a>
+            {% endif %}
         </div>
     </div>
-
 {% endblock %}
