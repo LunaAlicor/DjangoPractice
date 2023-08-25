@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Articles
 from django.views.generic import DetailView
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 # Create your views here.
 
@@ -16,8 +17,10 @@ def news(request):
     return render(request, 'news/news.html', {'page_obj': page_obj})
 
 
-# def nonews(request):
-#     return render(request, 'news/Nonews.html')
+def search_results(request):
+    query = request.GET.get('query')
+    results = Articles.objects.filter(Q(title__icontains=query) | Q(anons__icontains=query) | Q(full_text__icontains=query))
+    return render(request, 'news/search_results.html', {'results': results})
 
 
 class NewsDetail(DetailView):

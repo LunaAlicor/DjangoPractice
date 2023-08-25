@@ -1,0 +1,21 @@
+{% extends 'main/sample.html' %}
+{% load static%}
+
+{% block title%}Новости{% endblock %}
+
+
+{% block content %}
+<div class="alert2">
+  <h1>Результаты поиска:</h1>
+  {% for result in results %}
+    <h3>{{ result.title }}</h3>
+    <p>{{ result.anons }}
+  <div>
+    <button class="btn mt-3" style="background-color: darkorange; color: white;" onclick="location.href='{% url 'news-detail' result.id %}';">Перейти к новости</button>
+  </div>
+  </p>
+  {% empty %}
+    <p>Ничего не найдено.</p>
+  {% endfor %}
+</div>
+{% endblock %}
