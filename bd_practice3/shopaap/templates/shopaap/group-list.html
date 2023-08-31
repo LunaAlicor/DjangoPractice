@@ -1,0 +1,23 @@
+{% extends "shopapp/base.html" %}
+
+{% block title %}groups{% endblock %}
+
+{% block content %}
+    <h1>Hello groups:</h1>
+    {% if not groups %}
+    <h3>not groups yet</h3>
+    {% endif %}
+    <ul>
+    {% for group in groups %}
+        <li>
+        <h3> {{ group }} </h3>
+            <ul>
+            {% for permission in group.permissions.all %}
+                <li>{{permission}}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
