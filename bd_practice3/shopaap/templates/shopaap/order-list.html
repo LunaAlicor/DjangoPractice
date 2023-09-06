@@ -1,0 +1,27 @@
+{% extends "shopaap/base.html" %}
+
+{% block title %}Orders{% endblock %}
+{% block content %}
+<h1>Orders: </h1>
+<div>
+    {% if orders %}
+        {% for order in orders %}
+            <div>
+                <p>Order by: {% firstof order.user.first_name order.user.username %}</p>
+                <p>Promocode: {{order.promocode}}</p>
+                <p>Address: {{order.delivery_address}}</p>
+                <div>
+                    <p>Products in order:</p>
+                    <ul>
+                        {% for product in order.products.all %}
+                        <li>{{product.name }} for {{product.price}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>No orders yet</h3>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import Group
-from .models import Product
+from .models import Product, Orders
 # Create your views here.
 
 
@@ -24,3 +24,10 @@ def product_list(request):
         "products": Product.objects.all(),
     }
     return render(request, 'shopaap/product-list.html', context=context)
+
+
+def order_list(request):
+    context = {
+        'orders': Orders.objects.select_related('user').prefetch_related('products').all(),
+    }
+    return render(request, 'shopaap/order-list.html', context=context)

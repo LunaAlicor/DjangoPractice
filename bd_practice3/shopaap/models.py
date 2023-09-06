@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -10,3 +10,10 @@ class Product(models.Model):
     discount = models.SmallIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
+
+class Orders(models.Model):
+    delivery_address = models.TextField(null=True, blank=True)
+    promocode = models.CharField(max_length=20,null=False, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    products = models.ManyToManyField(Product, related_name='orders')
