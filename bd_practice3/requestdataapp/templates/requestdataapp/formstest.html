@@ -1,0 +1,51 @@
+{% extends 'requestdataapp/base.html' %}
+
+{% block title %}Forms test {% endblock %}
+
+{% block content %}
+<h1>user form </h1>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="name_id">Full name</label>
+            <input id="name_id" name="name" type="text" maxlength="100">
+        </p>
+        <p>
+            <label for="age_id">Your age</label>
+            <input id="age_id" name="age" type="number" min="1" max="99">
+        </p>
+        <p>
+            <label for="about_id">Enter information about yourself</label>
+            <textarea name="about" id="about_id" cols="30" rows="5"></textarea>
+        </p>
+        <button type="submit">
+            submit
+        </button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Форма 2</h2>
+        {{ form.as_p }}
+        <button type="submit">
+            submit
+        </button>
+    </form>
+    {% if request.POST %}
+        <div>
+            <h2>From data: </h2>
+            <table>
+                <tr>
+                    <td>name: {{request.POST.name}} </td>
+                </tr>
+                <tr>
+                    <td>age: {{request.POST.age}}</td>
+                </tr>
+                <tr>
+                    <td>about: {{request.POST.about|linebreaks}}</td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

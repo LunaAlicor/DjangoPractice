@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'requestdataapp.middlewares.set_useragent_on_request_middleware',
+    'requestdataapp.middlewares.CountRequestmiddleware',
 ]
 
 ROOT_URLCONF = 'bd_practice3.urls'
