@@ -5,12 +5,13 @@
 {% endblock %}
 
 {% block content %}
+<a href="{% url 'create_product' %}">Создать продукт</a>
     <h1>Products:</h1>
     {% if products %}
         <div>
             {% for product in products %}
                 <div>
-                    <p>Name: {{ product.name }}</p>
+                    <a href="{% url 'product_detail' pk=product.id %}">Name: {{ product.name }}</a>
                     <p>Price: {{ product.price }}</p>
                     <p>Discount: {% firstof product.discount 'no discount' %}</p>
                 </div>

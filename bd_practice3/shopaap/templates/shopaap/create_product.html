@@ -1,0 +1,15 @@
+{% extends 'shopaap/base.html' %}
+
+
+{% block title %}Создание товара  {% endblock %}
+
+
+{% block content %}
+    <a href="{% url 'products' %}">Перейти к продуктам</a>
+    <h1>Создание продукта</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}

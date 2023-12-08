@@ -1,0 +1,17 @@
+{% extends 'shopaap/base.html' %}
+
+{% block title %}Детали продукта {% endblock %}
+
+{% block content %}
+  <h1>Hello details</h1>
+  <a href="{% url 'update_product' pk=product.id %}">Обновить товар</a>
+  <a href="{% url 'delete_product' pk=product.id %}">Удалить товар</a>
+  <div>
+    <h2>name: {{product.name}}</h2>
+    <p>price: {{product.price}}</p>
+    <p>discount: {{product.discount}}</p>
+    <p>description: {{product.description}}</p>
+    <p>create_time: {{product.created_at}}</p>
+
+  </div>
+{% endblock %}

@@ -29,9 +29,14 @@ def upload_tes(request):
         form = UploadForm(request.POST, request.FILES)
         if form.is_valid():
             my_file = form.cleaned_data["file"]
+
+            # print(size)
             fs = FileSystemStorage()
             filename = fs.save(my_file.name, my_file)
             print(f"saved file {filename}")
+        else:
+            context = {"form": form}
+            return render(request, "requestdataapp/upload.html", context=context)
     else:
         form = UploadForm()
 

@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'requestdataapp.middlewares.set_useragent_on_request_middleware',
     'requestdataapp.middlewares.CountRequestmiddleware',
+    'requestdataapp.middlewares.Anti_spam',
 ]
 
 ROOT_URLCONF = 'bd_practice3.urls'

@@ -14,5 +14,12 @@ def validate_file_name(file):
         raise ValidationError("File name inccorect")
 
 
+def validate_file_size(file):
+    max_size = 1 * 1024 * 1024
+    if file.size > max_size:
+        print("Файл большой ")
+        raise ValidationError("Файл слишком большой!")
+
+
 class UploadForm(forms.Form):
-    file = forms.FileField(validators=[validate_file_name])
+    file = forms.FileField(validators=[validate_file_name, validate_file_size])
