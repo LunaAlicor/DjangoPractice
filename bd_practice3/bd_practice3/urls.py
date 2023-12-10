@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shopaap.urls')),
     path('req/', include('requestdataapp.urls')),
+    path('aut/', include('authorization.urls')),
 ]
