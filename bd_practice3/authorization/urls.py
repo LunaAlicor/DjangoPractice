@@ -14,7 +14,9 @@ urlpatterns = [
     path('cookie/get/', views.get_cookie_view, name='get_cookie',),
     path('session/set/', views.set_session_view, name='set_session'),
     path('session/get/', views.get_session_view, name='get_session'),
-    # path('logout', views.logout_view, name='logout'),
-    path('logout', views.MyLogoutView.as_view(), name='logout'),
+    path('logout/', views.logout_view, name='logout'),
+    # path('logout/', views.MyLogoutView.as_view(), name='logout'),
+    path('about/', views.AboutMe.as_view(), name='about'),
+    path('registration/', views.RegisterView.as_view(), name='registration'),
 
 ]
